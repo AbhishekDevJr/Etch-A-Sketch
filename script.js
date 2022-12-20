@@ -1,8 +1,8 @@
 // Creating 16x16 child divs for grid-container
 const gridContainer = document.querySelector('.grid-container');
-//console.log(gridContainer);
 
-for(let i = 0; i < 16; i++){
+let gridVar = 16; // Default value for Grid
+for(let i = 0; i < gridVar; i++){
      let tempDiv = document.createElement('div');
      tempDiv.classList.add('itemDivParent' + i);
      tempDiv.style.width = '100%';
@@ -12,10 +12,8 @@ for(let i = 0; i < 16; i++){
      tempDiv.style.flexDirection = 'row';
      tempDiv.style.justifyContent = 'space-between';
      tempDiv.style.alignItems = 'center';
-     //const itemDivParent  = document.querySelector('');
-     //console.log(tempDiv.getAttribute('class'));
-     //console.log(itemDivParent);
-     for(let j = 0; j < 16; j++){
+     
+     for(let j = 0; j < gridVar; j++){
         //Creating Row of Divs
         let tempDivChild = document.createElement('div');
         tempDivChild.classList.add('itemDivChild' + j);
@@ -38,5 +36,25 @@ for(let i = 0; i < 16; i++){
      }
      gridContainer.appendChild(tempDiv);
 
+     //Button1 takes Input from user and sets the Grid Variable
+     /*function handleButton1(){
+        gridVar = prompt('Enter the Number of boxes per side.');
+        console.log(gridVar);
+        
+     }*/
 
+     
+     
 }
+
+
+//EventListener for Button1
+const gridButton1 = document.querySelector('#button1');
+gridButton1.addEventListener('click', (e) => {
+   gridVar = prompt('Enter the Number of boxes per side.');
+   console.log(gridVar)
+   console.log('Button1 was clicked');
+   //location.reload();
+   
+   return;
+});
