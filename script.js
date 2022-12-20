@@ -1,6 +1,6 @@
 // Creating 16x16 child divs for grid-container
 const gridContainer = document.querySelector('.grid-container');
-console.log(gridContainer);
+//console.log(gridContainer);
 
 for(let i = 0; i < 16; i++){
      let tempDiv = document.createElement('div');
@@ -13,14 +13,27 @@ for(let i = 0; i < 16; i++){
      tempDiv.style.justifyContent = 'space-between';
      tempDiv.style.alignItems = 'center';
      //const itemDivParent  = document.querySelector('');
-     console.log(tempDiv.getAttribute('class'));
+     //console.log(tempDiv.getAttribute('class'));
      //console.log(itemDivParent);
      for(let j = 0; j < 16; j++){
+        //Creating Row of Divs
         let tempDivChild = document.createElement('div');
         tempDivChild.classList.add('itemDivChild' + j);
-        tempDivChild.style.width = '50px';
+        tempDivChild.style.width = '6.1vw';
         tempDivChild.style.height = '5.84vh';
-        tempDivChild.style.border = '1px solid black';
+        tempDivChild.style.border = '1px solid blue';
+
+        //Adding Hover Affect
+        tempDivChild.addEventListener('mouseover', (e) => {
+            tempDivChild.style.backgroundColor = 'black';
+            //return;
+        });
+
+        //Removing Hover Affect
+        tempDivChild.addEventListener('mouseleave', (e) => {
+            tempDivChild.style.backgroundColor = 'white';
+            return;
+        });
         tempDiv.appendChild(tempDivChild);
      }
      gridContainer.appendChild(tempDiv);
