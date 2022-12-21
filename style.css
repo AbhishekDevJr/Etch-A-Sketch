@@ -1,13 +1,18 @@
+
+body {
+    padding : 0px;
+}
+
 .grid-container {
     border : 1px solid rgb(27, 25, 25);
-    width : 100%;
-    height : 97.6vh;
+    
+    
     
 
 }
 
 .grid-buttons {
-    border : 1px solid orange;
+    
     display : flex;
     flex-direction : row;
     justify-content : space-evenly;
