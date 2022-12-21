@@ -11,7 +11,7 @@ function createGridDivs(gridVar){
 
    //Grid Div height logic
    let heightVarDiv = 50/gridVar;
-   console.log('height of single div-->' + heightVarDiv);
+   
    for(let i = 0; i < gridVar; i++){
    let tempDiv = document.createElement('div');
    tempDiv.classList.add('itemDivParent' + i);
@@ -35,23 +35,13 @@ function createGridDivs(gridVar){
       tempDivChild.addEventListener('mouseover', (e) => {
           tempDivChild.style.backgroundColor = 'black';
           //return;
-      });
-
-      //Removing Hover Affect
-      /*tempDivChild.addEventListener('mouseleave', (e) => {
-          tempDivChild.style.backgroundColor = 'white';
-          return;
-      });*/
+      });      
       tempDiv.appendChild(tempDivChild);
    }
-   gridContainer.appendChild(tempDiv);
-
-   
-
-   
-   
+   gridContainer.appendChild(tempDiv);   
 }
 }
+
 //Function Call to Build grid of Divs
 createGridDivs(gridVar);
 
@@ -60,22 +50,18 @@ createGridDivs(gridVar);
 const gridButton1 = document.querySelector('#button1');
 gridButton1.addEventListener('click', (e) => {
    gridVar = prompt('Enter the Number of boxes per side. (Limit 100)');
-
    if(gridVar <= 100){
       let oldDiv = document.querySelector('.grid-container');
+      //Logic to remove old Grid of Divs
       while(oldDiv.firstChild){
          oldDiv.removeChild(oldDiv.firstChild);
       }
-
-      console.log(gridVar)
+      //console.log(gridVar)
       createGridDivs(gridVar);
    }
    else{
       alert('Please enter a value less than 100 or a valid number.')
-   }
-
-   
-   
+   }   
    return;
 });
 
@@ -83,6 +69,7 @@ gridButton1.addEventListener('click', (e) => {
 const gridButton2 = document.querySelector('#button2');
 gridButton2.addEventListener('click', (e) => {
    let oldDiv = document.querySelector('.grid-container');
+      //Logic to remove old Grid of Divs
       while(oldDiv.firstChild){
          oldDiv.removeChild(oldDiv.firstChild);
       }
