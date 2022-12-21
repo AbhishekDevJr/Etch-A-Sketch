@@ -4,8 +4,6 @@ let gridVar = 16; // Default value for Grid
 gridContainer.style.height = '60vh';
 gridContainer.style.width = '60vw';
 
-
-
 //Function Definition to build Grid of Divs
 function createGridDivs(gridVar){
 
@@ -35,8 +33,32 @@ function createGridDivs(gridVar){
       tempDivChild.addEventListener('mouseover', (e) => {
           tempDivChild.style.backgroundColor = 'black';
           //return;
-      });      
-      tempDiv.appendChild(tempDivChild);
+
+         
+
+      });
+
+      //Event Listener for button3
+      const gridButton3 = document.querySelector('#button3');
+      
+      gridButton3.addEventListener('click', (e) => {
+         //Random RGB Value Generator
+         let rgbValue1 = 256*Math.random();
+         let rgbValue2 = 256*Math.random();
+         let rgbValue3 = 256*Math.random();
+         let rgbValueF = 'rgb' + '(' + rgbValue1 + ',' + rgbValue2 + ',' + rgbValue3 + ')';
+      tempDivChild.addEventListener('mouseover', (e) => {
+         tempDivChild.style.backgroundColor = rgbValueF;
+      });
+   });
+      //Event Listener for Button5 Default Color
+      const gridbutton5 = document.querySelector('#button5');
+      gridbutton5.addEventListener('click', (e) => {
+         tempDivChild.addEventListener('mouseover', (e) => {
+            tempDivChild.style.backgroundColor = 'black';
+         });
+      });     
+   tempDiv.appendChild(tempDivChild);
    }
    gridContainer.appendChild(tempDiv);   
 }
@@ -74,3 +96,4 @@ gridButton2.addEventListener('click', (e) => {
          oldDiv.removeChild(oldDiv.firstChild);
       }
 });
+
