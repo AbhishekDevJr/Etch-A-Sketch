@@ -6,7 +6,6 @@ gridContainer.style.width = '60vw';
 
 //Function Definition to build Grid of Divs
 function createGridDivs(gridVar){
-
    //Grid Div height logic
    let heightVarDiv = 50/gridVar;
    
@@ -33,14 +32,10 @@ function createGridDivs(gridVar){
       tempDivChild.addEventListener('mouseover', (e) => {
           tempDivChild.style.backgroundColor = 'black';
           //return;
-
-         
-
       });
 
       //Event Listener for button3
       const gridButton3 = document.querySelector('#button3');
-      
       gridButton3.addEventListener('click', (e) => {
          //Random RGB Value Generator
          let rgbValue1 = 256*Math.random();
@@ -51,6 +46,7 @@ function createGridDivs(gridVar){
          tempDivChild.style.backgroundColor = rgbValueF;
       });
    });
+
       //Event Listener for Button5 Default Color
       const gridbutton5 = document.querySelector('#button5');
       gridbutton5.addEventListener('click', (e) => {
@@ -63,21 +59,15 @@ function createGridDivs(gridVar){
       const gridButton4 = document.querySelector('#button4');
       gridButton4.addEventListener('click', (e) => {
          let tempOpacity = 0.1;
-         tempDivChild.addEventListener('mouseover', (e) => {
-            
+         tempDivChild.addEventListener('mouseover', (e) => {  
             //console.log('opacity--> ' + tempOpacity);
-            if(tempOpacity !== 1){
-               
+            if(tempOpacity !== 1){ 
                tempOpacity+= 0.1;
-               tempDivChild.style.backgroundColor = 'rgb(1, 0, 0,' + tempOpacity + ')';
-               
+               tempDivChild.style.backgroundColor = 'rgb(1, 0, 0,' + tempOpacity + ')';   
             }
             else{
                return;
-            }
-
-         
-            
+            }   
          });
       });
 
@@ -91,6 +81,7 @@ function createGridDivs(gridVar){
       
    tempDiv.appendChild(tempDivChild);
    }
+
    gridContainer.appendChild(tempDiv);   
 }
 }
@@ -98,13 +89,13 @@ function createGridDivs(gridVar){
 //Function Call to Build grid of Divs
 createGridDivs(gridVar);
 
-
 //EventListener for Button1
 const gridButton1 = document.querySelector('#button1');
 gridButton1.addEventListener('click', (e) => {
    gridVar = prompt('Enter the Number of boxes per side. (Limit 100)');
    if(gridVar <= 100){
       let oldDiv = document.querySelector('.grid-container');
+      
       //Logic to remove old Grid of Divs
       while(oldDiv.firstChild){
          oldDiv.removeChild(oldDiv.firstChild);
