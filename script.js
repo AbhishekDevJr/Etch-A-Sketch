@@ -57,7 +57,38 @@ function createGridDivs(gridVar){
          tempDivChild.addEventListener('mouseover', (e) => {
             tempDivChild.style.backgroundColor = 'black';
          });
-      });     
+      });
+      
+      //Event Listener for Button4 10% Black
+      const gridButton4 = document.querySelector('#button4');
+      gridButton4.addEventListener('click', (e) => {
+         let tempOpacity = 0.1;
+         tempDivChild.addEventListener('mouseover', (e) => {
+            
+            //console.log('opacity--> ' + tempOpacity);
+            if(tempOpacity !== 1){
+               
+               tempOpacity+= 0.1;
+               tempDivChild.style.backgroundColor = 'rgb(1, 0, 0,' + tempOpacity + ')';
+               
+            }
+            else{
+               return;
+            }
+
+         
+            
+         });
+      });
+
+      //Event Listener for Button 6
+      const gridButton6 = document.querySelector('#button6');
+      gridButton6.addEventListener('click', (e) => {
+         tempDivChild.addEventListener('mouseover', (e) => {
+            tempDivChild.style.backgroundColor = 'inherit';
+         });
+      });
+      
    tempDiv.appendChild(tempDivChild);
    }
    gridContainer.appendChild(tempDiv);   
@@ -96,4 +127,9 @@ gridButton2.addEventListener('click', (e) => {
          oldDiv.removeChild(oldDiv.firstChild);
       }
 });
+
+
+
+   
+
 
