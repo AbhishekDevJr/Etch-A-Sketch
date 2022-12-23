@@ -93,7 +93,7 @@ createGridDivs(gridVar);
 const gridButton1 = document.querySelector('#button1');
 gridButton1.addEventListener('click', (e) => {
    gridVar = prompt('Enter the Number of boxes per side. (Limit 100)');
-   if(gridVar <= 100){
+   if(gridVar <= 100 && gridVar > 0){
       let oldDiv = document.querySelector('.grid-container');
       
       //Logic to remove old Grid of Divs
@@ -103,7 +103,7 @@ gridButton1.addEventListener('click', (e) => {
       //console.log(gridVar)
       createGridDivs(gridVar);
    }
-   else{
+   else if(isNaN(gridVar) || gridVar <= 0) {
       alert('Please enter a value less than 100 or a valid number.')
    }   
    return;
